@@ -22,3 +22,7 @@ it('hero should have a health level', function() {
 it('hero should have a favourite food', function() {
   assert.strictEqual(hero.favouriteFood, "pizza");
 })
+
+it('task array starts empty', function() {
+  assert.strictEqual(hero.tasks.length, 0);
+})
