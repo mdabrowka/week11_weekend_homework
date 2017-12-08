@@ -14,3 +14,7 @@ beforeEach(function() {
 it('hero should have a name', function() {
   assert.strictEqual(hero.name, "SuperWoman");
 })
+
+it('hero should have a health level', function() {
+  assert.strictEqual(hero.health, 70);
+})
