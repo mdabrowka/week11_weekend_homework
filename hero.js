@@ -6,4 +6,8 @@ const Hero = function(name, health, favouriteFood, tasks) {
 }
 
 
+Hero.prototype.sayMyName = function() {
+  return `My name is ${this.name}`
+}
+
 module.exports = Hero;

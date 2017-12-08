@@ -23,6 +23,10 @@ it('hero should have a favourite food', function() {
   assert.strictEqual(hero.favouriteFood, "pizza");
 })
 
+it('hero should be able to say her name', function() {
+  assert.strictEqual(hero.sayMyName(), "My name is SuperWoman");
+})
+
 it('task array starts empty', function() {
   assert.strictEqual(hero.tasks.length, 0);
 })
