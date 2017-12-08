@@ -15,3 +15,7 @@ beforeEach(function() {
 it('food should have a name', function() {
   assert.strictEqual(food1.name, "Eggs Benedict")
 })
+
+it('food should have a replenishment value', function() {
+  assert.strictEqual(food1.replenishmentValue, 5)
+})
