@@ -5,7 +5,9 @@ const Task = function(difficultyLevel, urgencyLevel, reward, status) {
   this.status = status;
 }
 
-
+Task.prototype.statusChange = function(statusChange) {
+  this.status = statusChange;
+}
 
 
 

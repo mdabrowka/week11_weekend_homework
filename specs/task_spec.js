@@ -27,3 +27,8 @@ it('task should have a reward ', function() {
 it('task should have a status', function() {
   assert.strictEqual(brushTeeth.status, "not started");
 })
+
+it('task should be able to change status', function() {
+  brushTeeth.statusChange("completed");
+  assert.strictEqual(brushTeeth.status, "completed" );
+})
