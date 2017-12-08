@@ -9,7 +9,7 @@ describe("Food", function () {
 
 beforeEach(function() {
   food1 = new Food("Eggs Benedict", 5);
-})
+});
 
 
 it('food should have a name', function() {
