@@ -23,3 +23,7 @@ it('task should have an urgency level', function() {
 it('task should have a reward ', function() {
   assert.strictEqual(brushTeeth.reward, "breakfast");
 })
+
+it('task should have a status', function() {
+  assert.strictEqual(brushTeeth.status, "not started");
+})
