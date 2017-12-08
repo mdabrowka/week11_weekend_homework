@@ -6,11 +6,13 @@ const assert = require('assert')
 describe('Hero', function() {
   let hero;
   let baconRoll;
+  let pizza;
 });
 
 beforeEach(function() {
   hero = new Hero("SuperWoman", 70, "pizza", []);
-  baconRoll = new Food("Bacon roll", 5)
+  baconRoll = new Food("Bacon roll", 5);
+  pizza = new Food("pizza", 2);
 });
 
 
@@ -37,4 +39,9 @@ it('task array starts empty', function() {
 it('hero should be able to eat and replenish health', function() {
   hero.eat(baconRoll);
   assert.strictEqual(hero.health, 75);
+})
+
+it('hero should be able to eat fave food and get more health', function() {
+  hero.eat(pizza);
+  assert.strictEqual(hero.health, 73);
 })
