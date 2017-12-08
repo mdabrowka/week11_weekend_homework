@@ -15,3 +15,7 @@ beforeEach(function() {
 it('task should have a difficulty level', function() {
   assert.strictEqual(brushTeeth.difficultyLevel, 2);
 })
+
+it('task should have an unrgency level', function() {
+  assert.strictEqual(brushTeeth.urgencyLevel, 3);
+})
