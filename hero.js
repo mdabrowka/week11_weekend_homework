@@ -33,6 +33,10 @@ Hero.prototype.sortTasksByUrgency = function() {
   return a.urgencyLevel - b.urgencyLevel});
 }
 
+Hero.prototype.viewTasksByStatus = function() {
+  this.tasks.filter()
+}
+
 
 
 module.exports = Hero;
