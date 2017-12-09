@@ -23,4 +23,11 @@ Hero.prototype.eat = function(food) {
   this.health += replenishment;}
 }
 
+Hero.prototype.sortTasksByDifficulty = function() {
+  this.tasks.sort(function (a, b) {
+  return a.difficultyLevel - b.difficultyLevel});
+}
+
+
+
 module.exports = Hero;

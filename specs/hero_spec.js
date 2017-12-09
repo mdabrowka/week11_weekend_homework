@@ -59,3 +59,11 @@ it('hero should be able to eat fave food and get more health', function() {
   hero.eat(pizza);
   assert.strictEqual(hero.health, 73);
 })
+
+it('hero should sort tasks by difficulty level', function() {
+  hero.addTask(walkDog);
+  hero.addTask(goRunning);
+  hero.addTask(finishHomework);
+  hero.sortTasksByDifficulty();
+  const expected = [walkDog, finishHomework, goRunning];
+  assert.deepStrictEqual(hero.tasks, expected)});
