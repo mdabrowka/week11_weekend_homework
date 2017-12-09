@@ -8,7 +8,7 @@ describe("Food", function () {
 
 
 beforeEach(function() {
-  food1 = new Food("Eggs Benedict", 5);
+  food1 = new Food("Eggs Benedict", 5, false);
 });
 
 
@@ -18,4 +18,8 @@ it('food should have a name', function() {
 
 it('food should have a replenishment value', function() {
   assert.strictEqual(food1.replenishmentValue, 5)
+})
+
+it('food should be able to check if it is poisoned', function() {
+  assert.strictEqual(food1.poisoned, false)
 })

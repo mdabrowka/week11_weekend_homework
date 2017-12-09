@@ -15,8 +15,8 @@ describe('Hero', function() {
 
 beforeEach(function() {
   hero = new Hero("SuperWoman", 70, "pizza", []);
-  baconRoll = new Food("Bacon roll", 5);
-  pizza = new Food("pizza", 2);
+  baconRoll = new Food("Bacon roll", 5, false);
+  pizza = new Food("pizza", 2, false);
   walkDog = new Task(3, 8, "happy pup", "complete");
   goRunning = new Task(9, 1, "3 biscuits", "complete")
   finishHomework = new Task(7, 5, "gin", "incomplete");
