@@ -28,6 +28,11 @@ Hero.prototype.sortTasksByDifficulty = function() {
   return a.difficultyLevel - b.difficultyLevel});
 }
 
+Hero.prototype.sortTasksByUrgency = function() {
+  this.tasks.sort(function (a, b) {
+  return a.urgencyLevel - b.urgencyLevel});
+}
+
 
 
 module.exports = Hero;
