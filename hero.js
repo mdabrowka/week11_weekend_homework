@@ -37,16 +37,17 @@ Hero.prototype.sortTasksByUrgency = function() {
 }
 
 
-// WHYYYYY??????!!!!!!!!!
-// Hero.prototype.viewCompletedTasks = function() {
-//   this.tasks.filter(function(task) {
-//     return task.complete === true;
-//   })
-// }
 
 Hero.prototype.viewCompletedTasks = function() {
-return this.tasks.filter(task => task.complete === true);
+   let result = this.tasks.filter(function(task) {
+    return (task.complete === true);
+  })
+  return result;
 }
+
+// Hero.prototype.viewCompletedTasks = function() {
+// return this.tasks.filter(task => task.complete === true);
+// }
 
 
 module.exports = Hero;
