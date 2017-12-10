@@ -36,16 +36,15 @@ Hero.prototype.sortTasksByUrgency = function() {
   return a.urgencyLevel - b.urgencyLevel});
 }
 
-Hero.prototype.viewTasksByStatus = function() {
-  this.tasks.filter(task => task.status === "incomplete")
-
-
-
-    // function(task) {
-    // return task.status === "incomplete";
-  }
-//   console.log(this.tasks);
+// Hero.prototype.viewTasksByStatus = function() {
+//   this.tasks.filter(function(a) {
+//     return a.complete === true;
+//   })
 // }
+
+Hero.prototype.viewCompletedTasks = function() {
+return this.tasks.filter(task => task.complete === true);
+}
 
 
 module.exports = Hero;

@@ -21,9 +21,9 @@ beforeEach(function() {
   baconRoll = new Food("Bacon roll", 5, false);
   pizza = new Food("pizza", 2, false);
   poisonedSoup = new Food("soup", 12, true);
-  walkDog = new Task(3, 8, "happy pup", "complete");
-  goRunning = new Task(9, 1, "3 biscuits", "complete")
-  finishHomework = new Task(7, 5, "gin", "incomplete");
+  walkDog = new Task(3, 8, "happy pup", true);
+  goRunning = new Task(9, 1, "3 biscuits", true)
+  finishHomework = new Task(7, 5, "gin", false);
   rat = new Rat();
 });
 
@@ -78,17 +78,23 @@ it('hero should sort tasks by urgency level', function() {
     hero.addTask(goRunning);
     hero.addTask(finishHomework);
     hero.sortTasksByUrgency();
-    const expected = [goRunning, finishHomework, walkDog,];
+    const expected = [goRunning, finishHomework, walkDog];
     assert.deepStrictEqual(hero.tasks, expected)})
 
-it('hero should view tasks by status', function() {
+
+
+
+
+it('hero should view completed tasks', function() {
   hero.addTask(walkDog);
   hero.addTask(goRunning);
   hero.addTask(finishHomework);
-  hero.viewTasksByStatus();
-  // const expected = [walkDog, goRunning];
-  const expected = [finishHomework];
-  assert.deepStrictEqual(hero.tasks, expected)})
+  hero.viewCompletedTasks();
+  const expected = [walkDog, goRunning];
+  assert.deepStrictEqual(hero.viewCompletedTasks(), expected)})
+
+
+
 
 it('hero should lose health upon eating a poisoned food', function() {
   rat.poison(poisonedSoup);
