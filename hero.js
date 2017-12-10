@@ -36,9 +36,11 @@ Hero.prototype.sortTasksByUrgency = function() {
   return a.urgencyLevel - b.urgencyLevel});
 }
 
-// Hero.prototype.viewTasksByStatus = function() {
-//   this.tasks.filter(function(a) {
-//     return a.complete === true;
+
+// WHYYYYY??????!!!!!!!!!
+// Hero.prototype.viewCompletedTasks = function() {
+//   this.tasks.filter(function(task) {
+//     return task.complete === true;
 //   })
 // }
 
