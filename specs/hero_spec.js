@@ -1,6 +1,7 @@
 const Hero = require('../hero.js')
 const Food = require('../food.js')
 const Task = require('../task.js')
+const Rat = require('../rat.js')
 const assert = require('assert')
 
 
@@ -8,18 +9,22 @@ describe('Hero', function() {
   let hero;
   let baconRoll;
   let pizza;
+  let poisonedSoup;
   let walkDog;
   let goRunning;
   let finishHomework;
+  let rat;
 });
 
 beforeEach(function() {
   hero = new Hero("SuperWoman", 70, "pizza", []);
   baconRoll = new Food("Bacon roll", 5, false);
   pizza = new Food("pizza", 2, false);
+  poisonedSoup = new Food("soup", 12, true);
   walkDog = new Task(3, 8, "happy pup", "complete");
   goRunning = new Task(9, 1, "3 biscuits", "complete")
   finishHomework = new Task(7, 5, "gin", "incomplete");
+  rat = new Rat();
 });
 
 
@@ -76,10 +81,16 @@ it('hero should sort tasks by urgency level', function() {
     const expected = [goRunning, finishHomework, walkDog,];
     assert.deepStrictEqual(hero.tasks, expected)})
 
-it('hero should view tasks by status', function() {
+xit('hero should view tasks by status', function() {
   hero.addTask(walkDog);
   hero.addTask(goRunning);
   hero.addTask(finishHomework);
   hero.viewTasksByStatus("complete");
   const expected = [walkDog, goRunning];
   assert.deepStrictEqual(hero.viewTasksByStatus("complete"), expected)})
+
+it('hero should lose health upon eating a poisoned food', function() {
+  rat.poison(poisonedSoup);
+  hero.eat(poisonedSoup);
+  assert.strictEqual(hero.health, 58);
+})

@@ -17,10 +17,14 @@ Hero.prototype.addTask = function(task) {
 
 Hero.prototype.eat = function(food) {
   let replenishment = food.replenishmentValue;
-  if (this.favouriteFood === food.name) {
+  if (food.poisoned === true) {
+    this.health -= replenishment;
+  }
+  else if (this.favouriteFood === food.name) {
     this.health += (1.5 * replenishment);
   } else {
   this.health += replenishment;}
+  console.log(this.health);
 }
 
 Hero.prototype.sortTasksByDifficulty = function() {
