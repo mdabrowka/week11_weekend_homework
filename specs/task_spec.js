@@ -8,7 +8,7 @@ describe('Task', function() {
 
 
 beforeEach(function() {
-  brushTeeth = new Task(2, 3, "breakfast", "not started");
+  brushTeeth = new Task(2, 3, "breakfast", false);
 })
 
 
@@ -25,10 +25,10 @@ it('task should have a reward ', function() {
 })
 
 it('task should have a status', function() {
-  assert.strictEqual(brushTeeth.status, "not started");
+  assert.strictEqual(brushTeeth.complete, false);
 })
 
 it('task should be able to change status', function() {
-  brushTeeth.statusChange("completed");
-  assert.strictEqual(brushTeeth.status, "completed" );
+  brushTeeth.statusChange();
+  assert.strictEqual(brushTeeth.complete, true );
 })

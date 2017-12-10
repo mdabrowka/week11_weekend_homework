@@ -24,7 +24,6 @@ Hero.prototype.eat = function(food) {
     this.health += (1.5 * replenishment);
   } else {
   this.health += replenishment;}
-  console.log(this.health);
 }
 
 Hero.prototype.sortTasksByDifficulty = function() {
@@ -38,9 +37,15 @@ Hero.prototype.sortTasksByUrgency = function() {
 }
 
 Hero.prototype.viewTasksByStatus = function() {
-  this.tasks.filter()
-}
+  this.tasks.filter(task => task.status === "incomplete")
 
+
+
+    // function(task) {
+    // return task.status === "incomplete";
+  }
+//   console.log(this.tasks);
+// }
 
 
 module.exports = Hero;

@@ -81,13 +81,14 @@ it('hero should sort tasks by urgency level', function() {
     const expected = [goRunning, finishHomework, walkDog,];
     assert.deepStrictEqual(hero.tasks, expected)})
 
-xit('hero should view tasks by status', function() {
+it('hero should view tasks by status', function() {
   hero.addTask(walkDog);
   hero.addTask(goRunning);
   hero.addTask(finishHomework);
-  hero.viewTasksByStatus("complete");
-  const expected = [walkDog, goRunning];
-  assert.deepStrictEqual(hero.viewTasksByStatus("complete"), expected)})
+  hero.viewTasksByStatus();
+  // const expected = [walkDog, goRunning];
+  const expected = [finishHomework];
+  assert.deepStrictEqual(hero.tasks, expected)})
 
 it('hero should lose health upon eating a poisoned food', function() {
   rat.poison(poisonedSoup);

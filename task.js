@@ -1,12 +1,12 @@
-const Task = function(difficultyLevel, urgencyLevel, reward, status) {
+const Task = function(difficultyLevel, urgencyLevel, reward, complete) {
   this.difficultyLevel = difficultyLevel;
   this.urgencyLevel = urgencyLevel;
   this.reward = reward;
-  this.status = status;
+  this.complete = complete;
 }
 
-Task.prototype.statusChange = function(statusChange) {
-  this.status = statusChange;
+Task.prototype.statusChange = function() {
+  this.complete = true;
 }
 
 
